@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+    <form method="POST" action='index.html' novalidate>
+        <input type="hidden" name="hiddenField" value="secret"/>
+        <div><textarea noresize maxlength='140' name="richtext" id="" cols="30" rows="10">Hello world!</textarea><div>
+        <input type="text" name='require' required/>
+        <select name="" id="">
+            <option value=""></option>
+            <option disabled value="one">one</option>
+            <option value="two">two</option>
+            <option selected value="three">three</option>
+            <input type="submit" value="send"/>
+        </select>
+    </form>
+</body>
+</html>
