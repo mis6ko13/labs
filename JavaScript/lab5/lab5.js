@@ -96,4 +96,3 @@ var rex = new Dog('Rex');
 rex.sit();
 rex.say();
 
- 
