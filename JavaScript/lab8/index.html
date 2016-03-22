@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegForm</title>
+</head>
+<body>
+<style>
+	[name='regForm'] {
+		width: 30%;
+		border: 2px solid black;
+	}
+	input {
+		float: right;
+	}
+	[type='submit'] {
+		float: none;
+		clear: both;
+		margin-left: 40%;
+	}
+	span {
+		width: 50px;
+		height: 20px;
+		float: left;
+		border: 1px solid black;
+		margin-left: 100px;
+		margin-right: 5px;
+	}
+</style>
+
+	<form name='regForm' novalidate='' data-id='regForm' method="post">
+		<label>
+		name:	<input name ='login' type="text" value=''/>
+		</label><br><br>
+		<label>
+		email:	<input required name ='email' type="email" value=''/>
+		</label><br><br>
+		<label>
+		password:	<input required name ='pass' type="password" value=''/>
+		</label><br><br>
+		<label>
+		confirm password:	<input required name ='passConfirm' type="password" value=''/>
+		</label><br><br>
+		<input type="button" data-id='reload' value='R'/>
+		<span name='capcha' data-id='capcha' type="text"></span>
+		<input name='capchaCheck' type="text" value=''><br><br>
+		<input type='submit' value='Submit'>
+	</form>
+	<script src='regForm.js'></script>
+</body>
+</html>

@@ -3,29 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM</title>
+    <script src="../lab7/practice_DOM.js"></script>
 </head>
 <body>
-    <div>
-        <span id="i123">
-            <a href="#">link 1</a>
-            <a href="#">link 2</a>
-        </span>
-            <a href="#">link 3</a>
+	<form name='mainForm'>
+		<label for="first">a:</label>
+		<input id='first' name='a' type="text" value=''><br><br>
+		<label for="second">b:</label>
+		<input id='second' name='b' type="text" value=''><br>
+		<label for="operations">operations:</label>
+		<div id="operations">
+			<label for="plus">+</label>	
+			<input name='operation' id='plus' type="radio" value='plus'><br>
+			<label for="minus">-</label>	
+			<input name='operation' id='minus' type="radio" value='minus'><br>
+			<label for="multiply">*</label>	
+			<input name='operation' id='multiply' type="radio" value='multiply'><br>
+			<label for="divide">/</label>	
+			<input name='operation' id='divide' type="radio" value='devide'>
+		</div><br>
+		<input type="submit" value='calculate'/><br><br>
+	<label for="result">result:</label>
+	<span data-id="result"></span>	
+	</form>
+<!--    
+<div id='main'>
+         <div class="header">  
+            <ul class="menu">
+                <li class="item">1</li>
+                <li class="item">2</li>
+                <li class="item">3</li>
+                <li class="item">4</li>
+                <li class="item">5</li>
+            </ul>
+        </div>
+        <div id="form">
+			<input id='input' type="text" value=''/>
+			<button id='button'>Button</button>
+        </div>
+        <div class="footer">
+            <ul class="menu">
+                <li class="item">6</li>
+                <li class="item">7</li>
+                <li class="item">8</li>
+                <li class="item">9</li>
+            </ul>
+        </div>
     </div>
-    <ul id="list1">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-    </ul>
-    <ul id="list2">
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-    </ul>
-    <script src="lab6.js"></script>
+-->
 </body>
 </html>

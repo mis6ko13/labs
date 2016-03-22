@@ -5,15 +5,26 @@
     <title>JS Search Form</title>
 </head>
 <body>
+<style>
+	li {
+		list-style: none;
+	}
+	
+	.hidden {
+		display: none;
+	}
+</style>
     <div>
     	<form novalidate data-id='searchForm' method="get">
     		<input name='searchText' type="text" value=''>
     		<input type="submit" value='Search'>
     	</form>
     	<ul data-id='list'>
-<!--    		<li></li>-->
+    	<div class="hidden" data-id='noData'>No data</div>
     	</ul>
 	</div>
-    <script type='text/javascript' src="/lab9/searchForm.js"></script>
+    <script type='text/javascript' src="searchForm.js"></script>
+    
+    <script type='text/javascript' src="db.js"></script>
 </body>
 </html>
