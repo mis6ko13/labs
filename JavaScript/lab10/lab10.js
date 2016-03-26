@@ -1,9 +1,12 @@
+'use strict';
+
 var functions = {
   show: show,
   hide: hide,
   setColor: setColor,
   slideUp: slideUp,
-  slideDown : slideDown	
+  slideDown : slideDown,
+  fadeOut: fadeOut
   
 }
 
@@ -37,26 +40,52 @@ function hide(el) {
 }
 
 function setColor(el, color) {
-	el.style.color = color;
+  el.style.color = color;
 }
 
-function slideUp(el){
-	el.style.overflow = 'hidden';
-	var interval = setInterval(function(){
-	if (el.offsetHeight <= 0) {
-		clearInterval(interval);
-	}	else {
-		el.style.height = (el.offsetHeight - 2) + 'px';
-	}
-}, 1);
+function slideUp(el) {
+  clearInterval(el.interval);
+	
+  el.style.overflow = 'hidden';
+
+  el.interval = setInterval(function() {
+    if (el.offsetHeight <= 0) {
+      clearInterval(el.interval);
+    } else {
+      el.style.height = Math.floor(el.offsetHeight/2) + 'px';
+    }
+  }, 200);
 }
 
-function slideDown(el){
-	var interval = setInterval(function(){
-	if (el.offsetHeight > 162) {
-		clearInterval(interval);
-	}	else {
-		el.style.height = (el.offsetHeight + 2) + 'px';
-	}
-}, 1);	
-}	
+function slideDown(el) {
+  clearInterval(el.interval);
+	
+  var clone = el.cloneNode(true);
+  clone.style.visibility = 'hidden';
+  clone.style.height = '';
+  document.body.appendChild(clone);
+
+  var cloneHeight = clone.offsetHeight;
+  el.interval = setInterval(function() {
+    if (el.offsetHeight >= cloneHeight) {
+      clearInterval(el.interval);
+    } else {
+      el.style.height = el.offsetHeight + 5 + 'px';
+    }
+  }, 200);
+
+  document.body.removeChild(clone);
+}
+
+function fadeOut(el) {
+  var interval = setInterval(function() {
+    var opacity = el.style.opacity || 1;
+
+    if (opacity <= 0) {
+      el.style.display = 'none';
+      clearInterval(interval);
+    } else {
+      el.style.opacity = opacity - 0.1;
+    }
+  }, 200);
+}

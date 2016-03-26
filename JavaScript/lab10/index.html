@@ -6,20 +6,23 @@
   </head>
   <body>
    <style>
-.content3 {
-	background-color: gray;	
+[class ^= content] {
+	background-color: black;
+	color: yellowgreen;
 	   }   
    </style>
     <div>
    <input type="text" name="selector" value="">
    <input type="text" name='color' value=''>
     </div>
-    <div data-id="actions">
-      <button name="show" action="show">Show</button>
-      <button name="hide" action="hide">Hide</button>
-      <button name="setColor" action="setColor">Set color</button>
-    <button name="slideUp" action="slideUp">Slide-up</button>
-    <button name="slideDown" action="slideDown">Slide-down</button>
+   		<div data-id="actions">
+		<button name="show" action="show">Show</button>
+		<button name="hide" action="hide">Hide</button>
+		<button name="setColor" action="setColor">Set color</button>
+		<button name="slideUp" action="slideUp">Slide-up</button>
+		<button name="slideDown" action="slideDown">Slide-down</button>
+		<button name="fadeOut" action="fadeOut">Fade-out</button>
+    	</div>
     </div>
 
     <div class="content1">

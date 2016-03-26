@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Errors+JSON</title>
+<style>
+	[data-id='json-textarea'] {
+		width: 600px;
+		height: 200px;
+	}
+</style>	
+</head>
+<body>
+	<form data-id='json-form' novalidate>
+	<textarea data-id='json-textarea'>[
+		{
+			"type": "text",
+			"name": "firstName",
+			"value": "",
+			"text": "First Name",
+			"placeholder": "Enter First Name",
+			"required": true 
+		}
+]
+	</textarea><br>
+	<input type="submit" value='Parse'>
+	</form><br>
+	<div data-id='formPreview'></div>
+	<script src='error.js'></script>
+</body>
+</html>  
