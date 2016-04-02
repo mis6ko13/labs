@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum eos eius amet sed quod repudiandae veniam labore nam odit quasi minus ducimus, error officia corporis recusandae nesciunt modi tempore numquam!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis excepturi ullam, illum commodi cumque nostrum voluptatem! Vero at, quo vel natus, impedit ea harum tenetur aspernatur itaque porro optio eos!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae temporibus modi, odit quaerat fugiat non harum ex quos repellat accusantium laboriosam quae nisi officia soluta totam repudiandae voluptatum dolores sed.
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum eos eius amet sed quod repudiandae veniam labore nam odit quasi minus ducimus, error officia corporis recusandae nesciunt modi tempore numquam!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis excepturi ullam, illum commodi cumque nostrum voluptatem! Vero at, quo vel natus, impedit ea harum tenetur aspernatur itaque porro optio eos!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae temporibus modi, odit quaerat fugiat non harum ex quos repellat accusantium laboriosam quae nisi officia soluta totam repudiandae voluptatum dolores sed.
+  </div>
+  
+  <button data-modal='modal-1'>Modal #1</button>
+  <button data-modal='modal-2'>Modal #2</button>
+  <button data-modal='modal-3' data-url='/modals/modal3.html'>Modal #3</button>
+  
+   <div class="modals-overlay">
+     <div class="modal" data-modal-id='modal-1'>
+       <header class='modal-header'>
+         <span>header</span>
+         <span data-action='close' class="btn-close">&#215;</span>
+         </header>
+       <section class='modal-body'>
+         content 1
+       </section>
+       <footer class='modal-footer'>footer</footer>
+     </div>
+     <div class="modal" data-modal-id='modal-2' data-close-overlay='false'>
+       <header class='modal-header'>
+         <span>header</span>
+         <span data-action='close' class="btn-close">&#215;</span>
+         </header>
+       <section class='modal-body'>
+         content 2
+       </section>
+       <footer class='modal-footer'>footer</footer>
+     </div>
+   </div> 
+  <script src="modal.js"></script>
+</body>
+</html>
