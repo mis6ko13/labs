@@ -1,0 +1,41 @@
+.main-header {
+  border: 1px solid #333;
+}
+.main-header::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.main-header .log-in,
+.main-header .log-out {
+  display: none;
+  float: right;
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.modal-overlay-active {
+  display: block;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 15px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 500px;
+  min-height: 230px;
+}
