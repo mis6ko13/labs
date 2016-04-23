@@ -3,7 +3,7 @@ addBtn.addEventListener('click', addTaskTemplate);
 newToDo.addEventListener('keydown', function(e) {
 	if(e.which === 13 || e.keyCode === 13){
 		addTaskTemplate();
-		if (activeTasks.length === 0) {
+		if (activeTasks.length === 1) {
 			taskCounter.innerHTML = 1;
 			itemsLeftNode.innerHTML = 'item left';
 		} else {
