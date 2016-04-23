@@ -1,4 +1,7 @@
 window.addEventListener('load', function() {
+	
+//	taskCounter.innerHTML = activeTasks.length;
+	
 /* first load and no task exist */
 	if (!localStorage.todos) {
 			localStorage.setItem('todos', '{}');

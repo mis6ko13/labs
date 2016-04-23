@@ -3,8 +3,12 @@ addBtn.addEventListener('click', addTaskTemplate);
 newToDo.addEventListener('keydown', function(e) {
 	if(e.which === 13 || e.keyCode === 13){
 		addTaskTemplate();
-		taskCounter.innerHTML = activeTasks.length;
-		return false;
+		if (activeTasks.length === 0) {
+			taskCounter.innerHTML = 1;
+		} else {
+			taskCounter.innerHTML = activeTasks.length;
+		}
+		return false;		
 	}
 });
 
@@ -20,6 +24,7 @@ newToDo.addEventListener('keydown', function(e) {
 			mainSection.removeChild(e.target.parentNode);
 			delete todos[taskId];
 			localStorage.setItem('todos', JSON.stringify(todos));
+			taskCounter.innerHTML = activeTasks.length;
 			
 			var allTasks = todoApp.querySelectorAll('.main .task');
 			
@@ -32,7 +37,8 @@ newToDo.addEventListener('keydown', function(e) {
 		/* check button init */
 		if(e.target.dataset.id === 'check'){
 			taskNode.classList.toggle('completed');
-			taskNode.classList.toggle('active');			
+			taskNode.classList.toggle('active');
+			taskCounter.innerHTML = activeTasks.length;
 			
 			if(!storageTaskObj.completed){
 				storageTaskObj.completed = true;
@@ -51,10 +57,30 @@ function checkEditInput() {
 			taskContentNode = taskNode.querySelector('.content'),
 			taskContent = taskContentNode.innerHTML;
 	
-/* if no changes */
+	/* if no changes */
 	if(editInput.value === taskContent){
 		taskNode.lastChild.remove();
-	}	
+	}
+	
+	var newTaskContent = editInput.value,
+	 		todos = JSON.parse(localStorage.todos),
+			taskId = taskNode.dataset.id,
+			currentTaskObj = todos[taskId];
+	
+	/* if empty value */
+	if(editInput.value === '') {
+		taskNode.remove();
+		delete todos[taskId];
+		localStorage.setItem('todos', JSON.stringify(todos));
+//		taskCounter.innerHTML = activeTasks.length;
+		
+		var allTasks = todoApp.querySelectorAll('.main .task');
+			
+		if(allTasks.length === 0){
+			showHideBtn.style.display = 'none';
+			footer.style.display = 'none';	
+		}
+	}
 	
 /* if changed */
 	else {
@@ -67,6 +93,8 @@ function checkEditInput() {
 		currentTaskObj.content = newTaskContent;
 		localStorage.setItem('todos', JSON.stringify(todos));
 	}
+	
+	taskCounter.innerHTML = activeTasks.length;
 };
 	
 /* if Enter pressed */
@@ -90,6 +118,7 @@ mainSection.addEventListener('dblclick', function(e) {
 		editInput.classList.add('edit-input');
 		editInput.setAttribute('onchange', 'checkEditInput()');
 		editInput.setAttribute('keydown', 'writeChanges()');
+		editInput.setAttribute('onblur', 'checkEditInput()');
 		taskNode.appendChild(editInput);
 		editInput.focus();
 	}
@@ -97,7 +126,7 @@ mainSection.addEventListener('dblclick', function(e) {
 
 /*  task counter init  */
 todoApp.addEventListener('click', function() {
-	taskCounter.innerHTML = activeTasks.length;
+//	taskCounter.innerHTML = activeTasks.length;
 });
 
 /* visibility show/hide helper */
