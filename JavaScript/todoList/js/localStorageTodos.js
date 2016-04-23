@@ -59,7 +59,13 @@ window.addEventListener('load', function() {
 				taskNode.classList.add('active');
 			}
 			var activeTasks = todoApp.getElementsByClassName('active');
-			taskCounter.innerHTML = activeTasks.length;
+			
+			if (activeTasks.length === 1) {
+				taskCounter.innerHTML = 1;
+				itemsLeftNode.innerHTML = 'item left';
+			} else {
+				taskCounter.innerHTML = activeTasks.length;
+			}
 		})	
 	}
 	

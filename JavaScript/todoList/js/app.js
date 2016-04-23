@@ -11,6 +11,7 @@ var	todoApp = document.querySelector('.todo-app'),
 		showActive = todoApp.querySelector("[data-id='show-active']"),
 		showCompleted = todoApp.querySelector("[data-id='show-completed']"),
 		clearCompleted = todoApp.querySelector("[data-id='clear-completed']"),
+		itemsLeftNode = todoApp.querySelector("[data-id='items-left']"),
 		taskTemplate = "";
 
 /* function is  adding ready html template with task into document */	

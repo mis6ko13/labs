@@ -5,9 +5,11 @@ newToDo.addEventListener('keydown', function(e) {
 		addTaskTemplate();
 		if (activeTasks.length === 0) {
 			taskCounter.innerHTML = 1;
+			itemsLeftNode.innerHTML = 'item left';
 		} else {
 			taskCounter.innerHTML = activeTasks.length;
-		}
+			itemsLeftNode.innerHTML = 'items left';
+		}	
 		return false;		
 	}
 });
@@ -28,10 +30,15 @@ newToDo.addEventListener('keydown', function(e) {
 			
 			var allTasks = todoApp.querySelectorAll('.main .task');
 			
+			if (activeTasks.length === 1) {
+			taskCounter.innerHTML = 1;
+			itemsLeftNode.innerHTML = 'item left';
+			}
+			
 			if(allTasks.length === 0){
 			showHideBtn.style.display = 'none';
 			footer.style.display = 'none';	
-		}
+			}
 	}
 		
 		/* check button init */
@@ -46,7 +53,12 @@ newToDo.addEventListener('keydown', function(e) {
 				storageTaskObj.completed = false;
 			}
 			
+			if(activeTasks.length === 1) {
+			taskCounter.innerHTML = 1;
+			itemsLeftNode.innerHTML = 'item left';
+			
 			localStorage.setItem('todos', JSON.stringify(todos));
+			}
 		}
 	});
 
@@ -75,6 +87,11 @@ function checkEditInput() {
 //		taskCounter.innerHTML = activeTasks.length;
 		
 		var allTasks = todoApp.querySelectorAll('.main .task');
+		
+		if (activeTasks.length === 1) {
+			taskCounter.innerHTML = 1;
+			itemsLeftNode.innerHTML = 'item left';
+		}
 			
 		if(allTasks.length === 0){
 			showHideBtn.style.display = 'none';
