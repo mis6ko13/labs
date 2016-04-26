@@ -53,11 +53,13 @@ newToDo.addEventListener('keydown', function(e) {
 				storageTaskObj.completed = false;
 			}
 			
+			localStorage.setItem('todos', JSON.stringify(todos));
+			
 			if(activeTasks.length === 1) {
 			taskCounter.innerHTML = 1;
 			itemsLeftNode.innerHTML = 'item left';
-			
-			localStorage.setItem('todos', JSON.stringify(todos));
+			} else {
+			itemsLeftNode.innerHTML = 'items left';	
 			}
 		}
 	});

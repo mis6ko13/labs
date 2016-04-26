@@ -104,7 +104,11 @@ header.task .before:hover {
 	outline: none;
 }
 
-::-webkit-input-placeholder {
+::-webkit-input-placeholder{
+	font-style: italic;
+}
+
+::-moz-placeholder {
 	font-style: italic;
 }
 
