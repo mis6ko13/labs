@@ -1,0 +1,19 @@
+<div>{{name}}</div>
+<div>
+		{{#each routes}}
+		<div>
+			<a href="#{{url}}">{{name}}</a>
+		</div>
+		{{/each}}
+</div>
+<div>
+	{{data.id}} - {{data.name}}
+</div>
+Relatives:
+{{#each data.relative}}
+	{{#if active}}
+	<div>
+		{{id}} - {{name}}
+</div>
+	{{/if}}
+{{/each}}
