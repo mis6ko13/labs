@@ -1,5 +1,4 @@
-angular.module('testApp')
-	.service('phoneService', function($q, $http) {
+angular.module('testApp').service('phoneService', function($q, $http) {
 	var phones = [];	
 	return {
 			get: function() {

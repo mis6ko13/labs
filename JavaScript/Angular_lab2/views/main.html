@@ -1,0 +1,17 @@
+	<h1>Users:</h1>
+	<input ng-model='query' type="text"/>
+		<button ng-click='refresh()' class="pull-right btn btn-default">Refresh</button>
+	<table class="table table-striped">
+		<tr class="row">
+			<th ng-click='sort("name.last")' class="col-md-3">Last Name</th>
+			<th ng-click='sort("name.first")' class="col-md-3">First Name</th>
+			<th ng-click='sort("phone")' class="col-md-3">Phone</th>
+			<th ng-click='sort("registered")' class="col-md-3">Registered</th>
+		</tr>
+		<tr ng-repeat='user in users |  filter:searchFunc | orderBy:orderProp:reverse' class="row">
+			<td class='col-md-3'>{{user.name.last}}</td>
+			<td class='col-md-3'>{{user.name.first}}</td>
+			<td class='col-md-3'>{{user.phone}}</td>
+			<td class='col-md-3'>{{user.registered | date}}</td>
+		</tr>
+	</table>
